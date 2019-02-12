@@ -140,10 +140,13 @@ plt.show()
 ```
 If you want to know what all works with `ax.set`, hit `ax.set_` and then the tab key. You can try all options listed there and see if all of them work.  
 
-https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplots.html
+<br></br>
+<br></br>
+<br></br>
 
-Here is a table containing the comparisons of some of the more popular plotting commands (or the ones I can think of). I will try and stick to the x-axis commands, but there will be identical y-axis commands for most. 
+I a providing a table containing the comparisons of some of the more popular plotting commands (or the ones I can think of). I will try and stick to the x-axis commands, but there will be identical y-axis commands for most. I will try and update these tables in time.
 
+#### The following table contains equivalent plotting commands between single plots and subplots.
 <table>
   <thead>
     <tr>
@@ -176,9 +179,12 @@ Here is a table containing the comparisons of some of the more popular plotting 
 </table>
 
 
+<br></br>
+<br></br>
+<br></br>
 
 
-The following table contains commands that ARE NOT equivalent to eachother and can easily confuse the user. I have included an asterisk at the beginning of the command that will fail. 
+#### The following table contains commands that ARE NOT equivalent to eachother and can easily confuse the user. I have included an asterisk (\*) at the beginning of the command that will fail. 
 <table>
   <thead>
     <tr>
