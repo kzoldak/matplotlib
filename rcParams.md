@@ -140,24 +140,26 @@ Type:      function
 
 
 ## Files
-The file that holds all of the rcParam commands can be found at 
+- The file that holds all of the rcParam commands can be found at 
 `~/anaconda3/lib/python3.7/site-packages/matplotlib/__init__.py`
 
 
-The file that stores all the rcParams settings can be found here:
-`/Users/kimzoldak/anaconda3/lib/python3.7/site-packages/matplotlib/rcsetup.py`
+- The file that stores all the rcParams settings can be found here:
+`~/anaconda3/lib/python3.7/site-packages/matplotlib/rcsetup.py`
 These can be changed within this file so that certain features are present every time you use matplotlib. 
 
 
-The rcParams are read from the matplotlibrc file, which is found at:`~/anaconda3/lib/python3.7/site-packages/matplotlib/mpl-data/matplotlibrc`
+- The rcParams are read from the matplotlibrc file, which is found at:`~/anaconda3/lib/python3.7/site-packages/matplotlib/mpl-data/matplotlibrc`
 This file is all commented out. It holds the ultimate defaults for the rcParams. 
 
-
-
-Under `def rcdefaults():`
-```python
-        from .style.core import STYLE_BLACKLIST
-        rcParams.clear()
-        rcParams.update({k: v for k, v in rcParamsDefault.items()
-                         if k not in STYLE_BLACKLIST})
+- Blacklisting params so that restoring params to defaults will not change certain params within the `rcsetup.py` file.  `~/anaconda3/lib/python3.7/site-packages/matplotlib/style/core.py`.  
+Within this file: 
 ```
+# A list of rcParams that should not be applied from styles
+STYLE_BLACKLIST = {
+    'interactive', 'backend', 'backend.qt4', 'webagg.port', 'webagg.address',
+    'webagg.port_retries', 'webagg.open_in_browser', 'backend_fallback',
+    'toolbar', 'timezone', 'datapath', 'figure.max_open_warning',
+    'savefig.directory', 'tk.window_focus', 'docstring.hardcopy'}
+```
+
