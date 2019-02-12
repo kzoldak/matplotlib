@@ -142,6 +142,7 @@ If you want to know what all works with `ax.set`, hit `ax.set_` and then the tab
 
 https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplots.html
 
+Here is a table containing the comparisons of some of the more popular plotting commands (or the ones I can think of). I will try and stick to the x-axis commands, but there will be identical y-axis commands for most. 
 
 <table>
   <thead>
@@ -153,11 +154,44 @@ https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplots.html
   <tbody>
     <tr>
       <td>plt.plot</td>
-      <td>Content Cell</td>
+      <td>ax.plot</td>
     </tr>
     <tr>
-      <td>ax.plot</td>
-      <td>Content Cell</td>
+      <td>plt.xlim</td>
+      <td>ax.set_xlim</td>
+    </tr>
+    <tr>
+      <td>plt.xlabel</td>
+      <td>ax.set_xlabel</td>
+    </tr>
+    <tr>
+      <td>plt.tick_params(axis='x', labelrotation=10)</td>
+      <td>ax.tick_params(axis='x', labelrotation=10)</td>
+    </tr>
+    <tr>
+      <td>plt.xticks(rotation=10)</td>
+      <td>ax.tick_params(axis='x', labelrotation=10)</td>
     </tr>
   </tbody>
 </table>
+
+
+
+
+The following table contains commands that ARE NOT equivalent to eachother and can easily confuse the user. I have included an asterisk at the beginning of the command that will fail. 
+<table>
+  <thead>
+    <tr>
+      <th>matplotlib.pyplot</th>
+      <th>matplotlib.pyplot.subplot</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>plt.xticks(rotation=10)</td>
+      <td>*ax.set_xticks(rotation=10)</td>
+    </tr>
+  </tbody>
+</table>
+
+
