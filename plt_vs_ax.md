@@ -156,6 +156,10 @@ I a providing a table containing the comparisons of some of the more popular plo
   </thead>
   <tbody>
     <tr>
+      <td>plt.figure()</td>
+      <td>fig,ax = plt.subplots()</td>
+    </tr>
+    <tr>
       <td>plt.plot</td>
       <td>ax.plot</td>
     </tr>
