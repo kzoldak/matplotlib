@@ -135,6 +135,22 @@ These can be edited within the file if you wish to have certain style features b
 ## Changing Style Sheets
 If you wish to make a lot of changes, you can make your own style sheet of rcParams and store in in the following directory: `/Users/kimzoldak/anaconda3/lib/python3.7/site-packages/matplotlib/mpl-data/stylelib/`. You can view some of these to get an idea of how it is done. You should also see the documentation [here](https://matplotlib.org/tutorials/introductory/customizing.html) on this topic before doing this. 
 
+I ran some code to make a plot using each of the 26 style sheets I had available with my matplotlib version. I plotted the name of the stylesheet on each one and saved the compilation into a single pdf file. See the `images/mpl_stylesheets.pdf` and the code below that produced the plots:
+```python
+from matplotlib.backends.backend_pdf import PdfPages
+pdf = PdfPages('images/mpl_stylesheets.pdf')
+
+for i,sty in enumerate(plt.style.available):
+    plt.style.use(sty)
+    fig = plt.figure()
+    monthly_mean.plot(kind='bar') # pandas plotting
+    plt.figtext(0.15, 0.82, sty, fontsize=16)
+    fig.tight_layout()
+    pdf.savefig(fig)
+    plt.style.use('default') # reset all style params
+pdf.close() 
+```
+
 
 ## Restoring to Default rcParams
 Using `plt.rcdefaults()` will restore all the rcParams back to their default values, as seen in the `~/anaconda3/lib/python3.7/site-packages/matplotlib/rcsetup.py` file. Any edits you've made to this file will be preserved, no worries!
